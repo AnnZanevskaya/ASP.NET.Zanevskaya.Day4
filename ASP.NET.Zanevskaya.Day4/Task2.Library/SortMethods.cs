@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task2.Library
 {
-        public class MaxValueFinder : ICompare
+        public class MaxValueAbsFinder : ICompare
         {
             public bool Compare(int[] firstA, int[] secondA)
             {
@@ -14,12 +14,30 @@ namespace Task2.Library
             }
             private static int MaxEl(int[] arr)
             {
-                int maxEl = 0;
-                for (int i = 0; i < arr.Length; i++)
+                //try
+                int maxEl = Math.Abs(arr[0]);
+                for (int i = 1; i < arr.Length; i++)
                 {
                     maxEl = Math.Max(maxEl, Math.Abs(arr[i]));
                 }
                 return maxEl;
+                //catch (ArgumentNullException)
+            }
+        }
+        public class MinValueAbsFinder : ICompare
+        {
+            public bool Compare(int[] firstA, int[] secondA)
+            {
+                return (MinEl(firstA) < MinEl(secondA));
+            }
+            private static int MinEl(int[] arr)
+            {
+                int minEl = Math.Abs(arr[0]);
+                for (int i = 1; i < arr.Length; i++)
+                {
+                    minEl = Math.Min(minEl, Math.Abs(arr[i]));
+                }
+                return minEl;
             }
         }
         public class SumValueFinder : ICompare
@@ -36,6 +54,22 @@ namespace Task2.Library
                     sum += arr[i];
                 }
                 return sum;
+            }
+        }
+        public class MultValueFinder : ICompare
+        {
+            public bool Compare(int[] firstA, int[] secondA)
+            {
+                return (MultValue(firstA) < MultValue(secondA));
+            }
+            private static int MultValue(int[] arr)
+            {
+                int mult = arr[0];
+                for (int i = 1; i < arr.Length; i++)
+                {
+                    mult *= arr[i];
+                }
+                return mult;
             }
         } 
 }

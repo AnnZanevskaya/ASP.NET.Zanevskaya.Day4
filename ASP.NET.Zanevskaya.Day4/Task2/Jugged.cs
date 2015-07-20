@@ -12,11 +12,11 @@ namespace Task2
         static void Main()
         {
             int[][] jaggedArray = new int[3][];
-            jaggedArray[0] = new int[] { 77, 5 };
-            jaggedArray[1] = new int[] { 6, 1 };
-            jaggedArray[2] = new int[] { 19, 1 };
+            jaggedArray[0] = new int[] { 4, 42 };
+            jaggedArray[1] = new int[] { -64, 6 };
+            jaggedArray[2] = new int[] { 3 };
 
-            JaggedSort.SortArr(jaggedArray, new SumValueFinder());
+            JaggedSort.SortArr(jaggedArray, new MinValueAbsFinder());
             ShowArrow(jaggedArray);
         }
         public static void ShowArrow(int[][] jagged)

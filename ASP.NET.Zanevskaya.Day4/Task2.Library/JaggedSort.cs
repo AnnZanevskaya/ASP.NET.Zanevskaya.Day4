@@ -10,6 +10,9 @@ namespace Task2.Library
     {
         public static void SortArr(int[][] jagged, ICompare method, bool direction = true)
         {
+            if (jagged == null) throw new ArgumentNullException("jugged");
+            foreach (int[] arr in jagged)
+                if (arr == null) throw new ArgumentNullException("null array");
             for (int i = 0; i < jagged.Length; i++)
             {
                 for (int j = i + 1; j < jagged.Length; j++)
