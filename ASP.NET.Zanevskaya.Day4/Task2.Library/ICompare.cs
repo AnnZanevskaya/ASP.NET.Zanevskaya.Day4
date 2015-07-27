@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Task2.Library
 {
-    public interface ICompare
+    public interface ICompare<T>
     {
-        bool Compare(int[] firstA, int[] secondA);
+        int Compare(int[] firstA, int[] secondA);
     }
 }

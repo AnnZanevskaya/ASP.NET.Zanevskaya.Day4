@@ -8,7 +8,7 @@ namespace Task2.Library
 {
     public static class JaggedSort
     {
-        public static void SortArr(int[][] jagged, ICompare method, bool direction = true)
+        public static void SortArr(int[][] jagged, ICompare<int[]> method)
         {
             if (jagged == null) throw new ArgumentNullException("jugged");
             foreach (int[] arr in jagged)
@@ -17,7 +17,7 @@ namespace Task2.Library
             {
                 for (int j = i + 1; j < jagged.Length; j++)
                 {
-                    if (method.Compare(jagged[i], jagged[j]) == (!direction))
+                    if (method.Compare(jagged[i], jagged[j]) > 0)
                     {
                         Swap(ref jagged[i], ref jagged[j]);
                     }

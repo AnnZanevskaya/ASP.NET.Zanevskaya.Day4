@@ -16,7 +16,7 @@ namespace Task2
             jaggedArray[1] = new int[] { -64, 6 };
             jaggedArray[2] = new int[] { 3 };
 
-            JaggedSort.SortArr(jaggedArray, new MinValueAbsFinder());
+            JaggedSort.SortArr(jaggedArray, new MaxValueAbsFinderDesc());
             ShowArrow(jaggedArray);
         }
         public static void ShowArrow(int[][] jagged)
